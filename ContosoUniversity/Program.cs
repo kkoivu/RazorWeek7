@@ -20,7 +20,8 @@ namespace ContosoUniversity
                 try
                 {
                     var context = services.GetRequiredService<SchoolContext>();
-                    context.Database.EnsureCreated();
+                    // using ContosoUniversity.Data; 
+                    DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {
